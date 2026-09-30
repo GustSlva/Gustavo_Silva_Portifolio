@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Gustavo Silva — Desenvolvedor Full-Stack.">
+    <title>Gustavo Silva — Desenvolvedor Full-Stack</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+    <style>
+        :root {
+            --bg: #f7f7f5;
+            --surface: #fff;
+            --text: #161616;
+            --muted: #6d6d6d;
+            --line: #deded9;
+            --accent: #ef8b27;
+            --accent2: #ffad55;
+            --shadow: 0 18px 50px rgba(0, 0, 0, .07)
+        }
+
+        [data-theme="dark"] {
+            --bg: #0d0d0d;
+            --surface: #151515;
+            --text: #f5f5f2;
+            --muted: #a4a4a0;
+            --line: #292929;
+            --shadow: 0 18px 50px rgba(0, 0, 0, .25)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            transition: .25s
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 40px));
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: color-mix(in srgb, var(--bg) 86%, transparent);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: -.04em;
+            font-size: 20px
+        }
+
+        .brand span {
+            color: var(--accent)
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        .navlinks a:hover {
+            color: var(--text)
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        .btn {
+            border: 1px solid var(--line);
+            background: var(--surface);
+            color: var(--text);
+            border-radius: 12px;
+            padding: 10px 13px;
+            cursor: pointer;
+            font: inherit
+        }
+    .iconbtn {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid var(--border);
+        border-radius: 50%;
+
+        color: var(--text);
+        text-decoration: none;
+
+        transition: 0.2s ease;
+    }
+
+    .iconbtn:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+    .iconbtn i  {
+        font-size: 18px;
+    }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 650
+        }
+
+        .btn.primary {
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text)
+        }
+
+        .btn.orange {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #111
+        }
+
+        .hero {
+            padding: 105px 0 90px;
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            gap: 70px;
+            align-items: end
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 18px
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #31b46b;
+            box-shadow: 0 0 0 5px rgba(49, 180, 107, .12)
+        }
+
+        h1 {
+            font-size: clamp(54px, 8vw, 92px);
+            line-height: .92;
+            letter-spacing: -.065em;
+            margin: 0 0 28px;
+            max-width: 900px
+        }
+
+        h1 em {
+            font-style: normal;
+            color: var(--accent)
+        }
+
+        .lead {
+            font-size: 20px;
+            color: var(--muted);
+            max-width: 680px;
+            margin-bottom: 32px
+        }
+
+        .heroBtns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .heroCard {
+            border: 1px solid var(--line);
+            background: var(--surface);
+            border-radius: 22px;
+            padding: 24px;
+            box-shadow: var(--shadow)
+        }
+
+        .heroCard small {
+            color: var(--muted)
+        }
+
+        .heroCard strong {
+            display: block;
+            font-size: 30px;
+            letter-spacing: -.04em;
+            margin: 4px 0 12px
+        }
+
+        .heroCard p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        section {
+            padding: 82px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .sectionHead {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: end;
+            margin-bottom: 34px
+        }
+
+        .kicker {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            color: var(--accent);
+            font-weight: 800
+        }
+
+        .sectionHead h2 {
+            font-size: 42px;
+            line-height: 1;
+            margin: 8px 0 0;
+            letter-spacing: -.05em
+        }
+
+        .sectionHead p {
+            color: var(--muted);
+            max-width: 430px;
+            margin: 0
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 25px
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 22px;
+            letter-spacing: -.03em
+        }
+
+        .card p {
+            color: var(--muted);
+            margin: 0 0 18px
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 6px 9px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted)
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden
+        }
+
+        .project:after {
+            content: "↗";
+            position: absolute;
+            right: 22px;
+            top: 22px;
+            font-size: 22px;
+            color: var(--muted)
+        }
+
+        .project .type {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 750;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: .1em
+        }
+
+        .timeline {
+            display: grid;
+            gap: 14px
+        }
+
+        .job {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 30px;
+            padding: 25px 0;
+        }
+
+        .job:first-child {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .date {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .job h3 {
+            margin: 0;
+            font-size: 20px
+        }
+
+        .job .company {
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        .job ul {
+            margin: 12px 0 0;
+            padding-left: 20px;
+            color: var(--muted)
+        }
+
+        .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .stack .tag {
+            font-size: 14px;
+            padding: 10px 13px;
+            background: var(--surface)
+        }
+
+        .stack .tag:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 70px
+        }
+
+        .about p {
+            color: var(--muted);
+            font-size: 18px
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px
+        }
+
+        .fact {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px;
+            background: var(--surface)
+        }
+
+        .fact b {
+            display: block;
+            font-size: 22px
+        }
+
+        .fact span {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .contact {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            padding: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px
+        }
+
+        .contact h2 {
+            font-size: 42px;
+            line-height: 1;
+            margin: 0 0 10px;
+            letter-spacing: -.05em
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin: 0
+        }
+
+        footer {
+            padding: 30px 0 50px;
+            color: var(--muted);
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        @media(max-width:800px) {
+            .navlinks {
+                display: none
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 70px
+            }
+
+            .heroCard {
+                max-width: 360px
+            }
+
+            .grid,
+            .about {
+                grid-template-columns: 1fr
+            }
+
+            .job {
+                grid-template-columns: 1fr;
+                gap: 5px
+            }
+
+            .sectionHead {
+                display: block
+            }
+
+            .sectionHead p {
+                margin-top: 15px
+            }
+
+            .contact {
+                display: block
+            }
+
+            .contact .heroBtns {
+                margin-top: 25px
+            }
+
+            h1 {
+                font-size: 58px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <nav>
+                <a class="brand" href="#">Gustavo Silva<span>.</span></a>
+                <div class="navlinks"><a href="#sobre">Sobre</a><a href="#experiencia">Experiência</a><a
+                        href="#projetos">Projetos</a><a href="#stack">Stack</a><a href="#contato">Contato</a></div>
+                <div class="actions"><a 
+    class="iconbtn" 
+    title="GitHub" 
+    href="https://github.com/GustSlva" 
+    target="_blank"
+    aria-label="GitHub"
+>
+    <i class="fa-brands fa-github"></i>
+</a>
+
+<a 
+    class="iconbtn" 
+    title="LinkedIn" 
+    href="https://www.linkedin.com/in/gustavo-silva-41a2542ba/" 
+    target="_blank"
+    aria-label="LinkedIn"
+>
+    <i class="fa-brands fa-linkedin-in"></i>
+</a><button
+                        class="iconbtn" id="theme" aria-label="Alternar tema">☾</button></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero wrap">
+            <div>
+                <div class="eyebrow"><span class="dot"></span> Disponível para oportunidades</div>
+                <h1>Desenvolvedor <em>Full-Stack.</em></h1>
+                <p class="lead">Olá, eu sou Gustavo. Estudante de Análise e Desenvolvimento de Sistemas e Informática
+                    para Internet, apaixonado por tecnologia e por transformar ideias em soluções web.</p>
+                <div class="heroBtns">
+                    <a class="btn orange" href="#projetos">Ver meus projetos →</a>
+                    <a class="btn" href="Gustavo_Silva_Curriculo.pdf" download>Baixar currículo ↓</a>
+                </div>
+            </div>
+            <div class="heroCard"><small>Atualmente</small><strong>Ordem Dev</strong>
+                <p>Desenvolvedor Full-Stack · Natal/RN<br>Desenvolvimento web, UI/UX, Git/GitHub e metodologias ágeis.
+                </p>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="wrap about">
+                <div>
+                    <div class="kicker">01 — Sobre mim</div>
+                    <h2>Construindo, aprendendo e evoluindo.</h2>
+                </div>
+                <div>
+                    <p>Tenho uma base técnica em desenvolvimento Full-Stack e experiência prévia com suporte de T.I., o
+                        que fortaleceu minha capacidade de resolver problemas e me comunicar com diferentes equipes.</p>
+                    <p>Hoje aplico essa experiência no desenvolvimento de aplicações web, prototipação de interfaces e
+                        trabalho colaborativo com metodologias ágeis.</p>
+                    <div class="facts">
+                        <div class="fact"><b>Full-Stack</b><span>Web development</span></div>
+                        <div class="fact"><b>UI/UX</b><span>Figma & usabilidade</span></div>
+                        <div class="fact"><b>Git/GitHub</b><span>Versionamento</span></div>
+                        <div class="fact"><b>Inglês</b><span>Leitura e compreensão intermediárias</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <div class="wrap">
+                <div class="sectionHead">
+                    <div>
+                        <div class="kicker">02 — Experiência</div>
+                        <h2>Onde já atuei: </h2>
+                    </div>
+                    <p>Experiências em desenvolvimento e tecnologia</p>
+                </div>
+                <div class="timeline">
+                    <div class="job">
+                        <div class="date">05/2026 — presente</div>
+                        <div>
+                            <h3>Desenvolvedor Freelancer</h3>
+                            <div class="company">Ordem Dev - Desenvolvedor Full-Stack · Natal/RN</div>
+                            <ul>
+                                <li>Desenvolvimento de aplicações web completas com JavaScript, Django, Python, HTML e CSS, do levantamento de requisitos à
+                                    implementação.</li>
+                                <li>Colaboração multidisciplinar com metodologias ágeis.</li>
+                                <li>Uso de Git/GitHub para desenvolvimento colaborativo e manutenção do código.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="date">04/2023 — 08/2024</div>
+                        <div>
+                            <h3>Bolsista de T.I</h3>
+                            <div class="company">IFRN — Campus Zona Norte</div>
+                            <ul>
+                                <li>Manutenção de computadores.</li> 
+                                <li>gestão de chamados.</li>
+                                <li>suporte à infraestrutura.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <div class="wrap">
+                <div class="sectionHead">
+                    <div>
+                        <div class="kicker">03 — Projetos</div>
+                        <h2>Projetos e colaborações</h2>
+                    </div>
+                    <p>Projetos que mostram desenvolvimento, design, produto e trabalho em equipe.</p>
+                </div>
+                <div class="grid">
+                    <a class="card project" href="https://github.com/GustSlva" target="_blank">
+                        <div class="type">Projeto · Ordem Dev - PRIVADO</div>
+                        <h3>Bunker Seguros</h3>
+                        <p>Aplicação de gestão CRUD de segurados e autenticação/controle
+                            de acesso.</p>
+                        <div class="tags"><span class="tag">Django</span><span class="tag">Python</span><span
+                                class="tag">SQLite</span><span class="tag">JavaScript</span><span
+                                class="tag">Git</span></div>
+                    </a>
+                    <a class="card project" href="https://github.com/GustSlva/elopotiguar_Hackathon" target="_blank">
+                        <div class="type">Hackathon do Sol · 2026</div>
+                        <h3>Elo Potiguar</h3>
+                        <p>Hub de impacto ESG. Atuação como Product Owner, organização do pitch e estruturação do modelo
+                            B2B SaaS.</p>
+                        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                                class="tag">JavaScript</span><span class="tag">Supabase</span><span
+                                class="tag">Git</span></div>
+                    </a>
+                    <a class="card project" href="https://github.com/GustSlva/plott-movie-recomendations" target="_blank">
+                        <div class="type">Projeto pessoal · 2026 - Atualmente</div>
+                        <h3>Plott: Movie Recomendations</h3>
+                        <p>O Plott é um sistema de recomendação de filmes baseado em IA que analisa seu gosto cinematográfico para mapear e 
+                            descobrir suas próximas histórias favoritas.</p>
+                        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                                class="tag">JavaScript</span></div>
+                    </a>
+                        
+            </div>
+        </section>
+
+        <section id="stack">
+            <div class="wrap">
+                <div class="sectionHead">
+                    <div>
+                        <div class="kicker">04 — Stack</div>
+                        <h2>Tecnologias:</h2>
+                    </div>
+                    <p>Ferramentas e tecnologias presentes na minha formação e projetos.</p>
+                </div>
+                <div class="stack"><span class="tag">Python</span><span class="tag">JavaScript</span><span
+                        class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Django</span><span
+                        class="tag">NodeJS</span><span class="tag">Git</span><span class="tag">GitHub</span><span
+                        class="tag">Figma</span><span class="tag">SQLite</span><span></div>
+            </div>
+        </section>
+
+        <section id="formacao">
+            <div class="wrap">
+                <div class="sectionHead">
+                    <div>
+                        <div class="kicker">05 — Formação</div>
+                        <h2>Procurando sempre evoluir minhas habilidades.</h2>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Análise e Desenvolvimento de Sistemas</h3>
+                        <p>IFRN — Campus Natal Central<br>09/2025 — presente</p>
+                    </div>
+                    <div class="card">
+                        <h3>Técnico em Informática para Internet</h3>
+                        <p>IMD/UFRN - Natal/RN<br>02/2026 — presente</p>
+                    </div>
+                    <div class="card">
+                        <h3>Front-end / UI Design</h3>
+                        <p>Origamid<br>2026 — presente</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="wrap">
+                <div class="contact">
+                    <div>
+                        <div class="kicker">06 — Contato</div>
+                        <h2>Vamos conversar?</h2>
+                        <p>Estou aberto a oportunidades, projetos e colaborações.</p>
+                    </div>
+                    <div class="heroBtns"><a class="btn orange" href="mailto:gustavosamuel066@gmail.com">Enviar e-mail
+                            →</a><a class="btn" href="https://linkedin.com/in/gustavo-silva-41a2542ba"
+                            target="_blank">LinkedIn</a><a class="btn" href="https://github.com/GustSlva"
+                            target="_blank">GitHub</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="wrap"><span>© 2026 Gustavo Silva</span><span>Natal, RN · Brasil</span></footer>
+    <script>
+        const root = document.documentElement, btn = document.getElementById('theme');
+        const saved = localStorage.getItem('theme');
+        if (saved) root.dataset.theme = saved;
+        function icon() { btn.textContent = root.dataset.theme === 'dark' ? '☀' : '☾' }
+        icon();
+        btn.onclick = () => { const dark = root.dataset.theme !== 'dark'; root.dataset.theme = dark ? 'dark' : 'light'; localStorage.setItem('theme', root.dataset.theme); icon() };
+    </script>
+</body>
+
+</html>
