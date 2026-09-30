@@ -3,7 +3,7 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, experiências, fo
 
 ---
 
-###Funcionalidades:
+### Funcionalidades:
 * Modo claro e escuro
 * Download do currículo
 * Links para GitHub e LinkedIn
@@ -14,7 +14,7 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, experiências, fo
 
 ---
 
-###Contatos:
+### Contatos:
 GitHub: https://github.com/GustSlva
 LinkedIn: https://linkedin.com/in/gustavo-silva-41a2542ba
 E-mail: gustavosamuel066@gmail.com
