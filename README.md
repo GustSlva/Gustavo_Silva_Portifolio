@@ -1,4 +1,4 @@
-# Gustavo_Silva_Portifolio
+# Gustavo Silva - Portifólio
 Portfólio pessoal desenvolvido para apresentar meus projetos, experiências, formação e tecnologias.
 
 ---
