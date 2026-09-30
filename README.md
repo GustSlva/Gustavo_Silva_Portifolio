@@ -15,6 +15,6 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, experiências, fo
 ---
 
 ### Contatos:
-GitHub: https://github.com/GustSlva
-LinkedIn: https://linkedin.com/in/gustavo-silva-41a2542ba
-E-mail: gustavosamuel066@gmail.com
+* GitHub: https://github.com/GustSlva
+* LinkedIn: https://linkedin.com/in/gustavo-silva-41a2542ba
+* E-mail: gustavosamuel066@gmail.com
